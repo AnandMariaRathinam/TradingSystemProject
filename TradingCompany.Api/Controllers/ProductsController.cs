@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using TradingCompany.Api.Application.Services;
 using TradingCompany.Api.Domain.Entities;
+using TradingCompany.Api.Application.DTOs.Products;
 
 namespace TradingCompany.Api.Controllers
 {
@@ -29,10 +30,11 @@ namespace TradingCompany.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Product product)
+        public async Task<IActionResult> Create(
+            [FromBody] CreateProductRequest request)
         {
-            var id = await _service.CreateProductAsync(product);
-            return CreatedAtAction(nameof(GetById), new { id }, product);
+            var id = await _service.CreateProductAsync(request);
+            return CreatedAtAction(nameof(GetById), new { id }, null);
         }
     }
 }

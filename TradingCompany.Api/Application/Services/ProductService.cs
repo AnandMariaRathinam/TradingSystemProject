@@ -1,5 +1,7 @@
 using TradingCompany.Api.Application.Interfaces;
+using TradingCompany.Api.Application.DTOs.Products;
 using TradingCompany.Api.Domain.Entities;
+
 
 namespace TradingCompany.Api.Application.Services
 {
@@ -18,7 +20,17 @@ namespace TradingCompany.Api.Application.Services
         public Task<Product?> GetProductAsync(int id)
             => _repository.GetByIdAsync(id);
 
-        public Task<int> CreateProductAsync(Product product)
-            => _repository.CreateAsync(product);
+        public async Task<int> CreateProductAsync(CreateProductRequest request)
+        {
+            var product = new Product
+            {
+                Name = request.Name,
+                Sku = request.Sku,
+                Price = request.Price,
+                Stock = request.Stock
+            };
+
+            return await _repository.CreateAsync(product);
+        }
     }
 }

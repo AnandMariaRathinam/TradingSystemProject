@@ -3,10 +3,15 @@ using TradingCompany.Api.Application.Interfaces;
 using TradingCompany.Api.Application.Services;
 using TradingCompany.Api.Infrastructure.Data;
 using TradingCompany.Api.Infrastructure.Repositories;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddFluentValidation(config =>
+    {
+        config.RegisterValidatorsFromAssemblyContaining<Program>();
+    });
 
 builder.Services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
@@ -27,5 +32,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
+
 app.MapControllers();
 app.Run();

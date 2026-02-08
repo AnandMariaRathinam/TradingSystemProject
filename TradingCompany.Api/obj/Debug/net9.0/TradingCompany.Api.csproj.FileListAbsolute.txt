@@ -39,3 +39,7 @@ F:\project\TCompany\TradingCompany.Api\obj\Debug\net9.0\refint\TradingCompany.Ap
 F:\project\TCompany\TradingCompany.Api\obj\Debug\net9.0\TradingCompany.Api.pdb
 F:\project\TCompany\TradingCompany.Api\obj\Debug\net9.0\TradingCompany.Api.genruntimeconfig.cache
 F:\project\TCompany\TradingCompany.Api\obj\Debug\net9.0\ref\TradingCompany.Api.dll
+F:\project\TCompany\TradingCompany.Api\bin\Debug\net9.0\FluentValidation.dll
+F:\project\TCompany\TradingCompany.Api\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
+F:\project\TCompany\TradingCompany.Api\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+F:\project\TCompany\TradingCompany.Api\obj\Debug\net9.0\TradingCompany.Api.sourcelink.json
